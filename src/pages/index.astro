@@ -1,0 +1,403 @@
+---
+import '../styles/global.css';
+import Icon from '../components/Icon.astro';
+import LinkedInPost from '../components/LinkedInPost.astro';
+import Contributions from '../components/Contributions.astro';
+import { profile, stats, experience, projects, skills, education, awards } from '../data/profile';
+import linkedinPosts from '../data/linkedin.json';
+import manualCerts from '../data/certifications.json';
+import github from '../data/generated/github.json';
+import credly from '../data/generated/credly.json';
+
+const base = import.meta.env.BASE_URL;
+const title = `${profile.name} · ${profile.role}`;
+const description = profile.tagline;
+
+const certifications = [...credly, ...manualCerts].sort((a, b) => String(b.date).localeCompare(String(a.date)));
+const repos = github.repos.slice(0, 6);
+const events = github.events.slice(0, 8);
+const fmtDate = (d: string) => new Date(d).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+
+const langColor: Record<string, string> = {
+  Kotlin: '#A97BFF',
+  Python: '#3572A5',
+  'C#': '#178600',
+  R: '#198CE7',
+  JavaScript: '#f1e05a',
+  TypeScript: '#3178c6',
+  HTML: '#e34c26',
+  MATLAB: '#e16737',
+  'Jupyter Notebook': '#DA5B0B',
+};
+
+const nav = [
+  ['About', '#about'],
+  ['Experience', '#experience'],
+  ['Projects', '#projects'],
+  ['GitHub', '#github'],
+  ['Updates', '#updates'],
+  ['Certifications', '#certifications'],
+  ['Contact', '#contact'],
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: profile.name,
+  jobTitle: profile.role,
+  email: `mailto:${profile.email}`,
+  image: profile.avatar,
+  url: new URL(base, Astro.site).href,
+  sameAs: [`https://github.com/${profile.github}`, profile.linkedin],
+  alumniOf: 'Indian Institute of Technology Kharagpur',
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(base, Astro.site)} />
+    <link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={profile.avatar} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#0b1220" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;700;800&family=JetBrains+Mono:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script is:inline>
+      try {
+        const t = localStorage.getItem('theme');
+        if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.classList.add('dark');
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <!-- Background glow -->
+    <div aria-hidden="true" class="pointer-events-none fixed inset-x-0 top-0 -z-10 h-[600px] overflow-hidden">
+      <div class="absolute -top-40 left-1/2 h-[500px] w-[900px] -translate-x-1/2 rounded-full bg-teal-400/20 blur-3xl dark:bg-teal-500/10"></div>
+    </div>
+
+    <header class="sticky top-0 z-40 border-b border-transparent bg-paper/70 backdrop-blur-lg transition dark:bg-ink/70" id="topbar">
+      <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+        <a href="#top" class="font-display text-lg font-bold text-slate-900 dark:text-white">
+          {profile.name}<span class="text-teal-600">.</span>
+        </a>
+        <ul class="hidden items-center gap-1 text-sm font-medium lg:flex">
+          {nav.map(([label, href]) => (
+            <li><a href={href} class="rounded-full px-3 py-1.5 text-slate-600 hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-white/5 dark:hover:text-white">{label}</a></li>
+          ))}
+        </ul>
+        <div class="flex items-center gap-1">
+          <a href={profile.linkedin} target="_blank" rel="noopener" aria-label="LinkedIn" class="rounded-full p-2 text-slate-600 hover:text-[#0a66c2] dark:text-slate-400"><Icon name="linkedin" class="size-5" /></a>
+          <a href={`https://github.com/${profile.github}`} target="_blank" rel="noopener" aria-label="GitHub" class="rounded-full p-2 text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"><Icon name="github" class="size-5" /></a>
+          <button id="theme" type="button" aria-label="Toggle dark mode" class="rounded-full p-2 text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white">
+            <Icon name="moon" class="size-5 dark:hidden" /><Icon name="sun" class="hidden size-5 dark:block" />
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <!-- Hero -->
+      <section class="mx-auto grid max-w-6xl items-center gap-12 px-4 pt-16 pb-20 sm:px-6 md:grid-cols-[1fr_auto] md:pt-24">
+        <div>
+          <p class="eyebrow mb-5 flex items-center gap-2">
+            <span class="relative flex size-2"><span class="absolute inline-flex size-full animate-ping rounded-full bg-teal-500 opacity-60"></span><span class="relative inline-flex size-2 rounded-full bg-teal-500"></span></span>
+            {profile.role}
+          </p>
+          <h1 class="text-4xl leading-[1.05] font-extrabold sm:text-6xl">
+            Hi, I'm {profile.name}.<br />
+            <span class="bg-gradient-to-r from-teal-700 to-sky-600 bg-clip-text text-transparent dark:from-teal-300 dark:to-sky-400">I make industrial data useful.</span>
+          </h1>
+          <p class="mt-6 max-w-xl text-lg leading-relaxed">{profile.tagline}</p>
+          <p class="mt-4 flex items-center gap-1.5 text-sm text-slate-500"><Icon name="pin" /> {profile.location}</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#contact" class="btn btn-primary">Get in touch <Icon name="arrow" /></a>
+            <a href={profile.linkedin} target="_blank" rel="noopener" class="btn btn-ghost"><Icon name="linkedin" /> LinkedIn</a>
+            <a href={`https://github.com/${profile.github}`} target="_blank" rel="noopener" class="btn btn-ghost"><Icon name="github" /> GitHub</a>
+          </div>
+        </div>
+        <div class="relative mx-auto md:mx-0">
+          <div class="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-teal-500/30 to-sky-500/30 blur-2xl"></div>
+          <img src={profile.avatar} alt={profile.name} width="288" height="288" class="relative size-56 rounded-[2rem] border border-white/60 object-cover shadow-xl sm:size-72 dark:border-white/10" />
+        </div>
+      </section>
+
+      <!-- Stats -->
+      <section class="mx-auto max-w-6xl px-4 sm:px-6">
+        <dl class="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-200/80 md:grid-cols-4 dark:border-white/10 dark:bg-white/10">
+          {stats.map((s) => (
+            <div class="bg-paper p-6 dark:bg-ink">
+              <dt class="text-sm text-slate-500">{s.label}</dt>
+              <dd class="font-display mt-1 text-3xl font-bold text-slate-900 dark:text-white">{s.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="reveal mx-auto grid max-w-6xl gap-10 px-4 py-24 sm:px-6 md:grid-cols-[220px_1fr]">
+        <div><p class="eyebrow">01 · About</p></div>
+        <div class="space-y-5 text-lg leading-relaxed">
+          {profile.summary.map((p) => <p>{p}</p>)}
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="reveal mx-auto grid max-w-6xl gap-10 px-4 pb-24 sm:px-6 md:grid-cols-[220px_1fr]">
+        <div>
+          <p class="eyebrow">02 · Experience</p>
+          <h2 class="mt-3 text-3xl font-bold">Where I've worked</h2>
+        </div>
+        <ol class="relative space-y-6 border-l border-slate-200 pl-6 dark:border-white/10">
+          {experience.map((job) => (
+            <li class="relative">
+              <span class="absolute top-6 -left-[31px] size-3 rounded-full border-2 border-paper bg-teal-600 dark:border-ink"></span>
+              <div class="card p-6">
+                <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                  <h3 class="text-lg font-semibold">{job.role}</h3>
+                  <span class="font-mono text-xs text-slate-500">{job.period}</span>
+                </div>
+                <p class="mt-0.5 text-sm font-medium text-teal-700 dark:text-teal-400">{job.company} · <span class="text-slate-500">{job.location}</span></p>
+                <ul class="mt-4 space-y-2 text-[15px] leading-relaxed">
+                  {job.points.map((pt) => <li class="flex gap-3"><span class="mt-2.5 size-1 shrink-0 rounded-full bg-slate-400"></span>{pt}</li>)}
+                </ul>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <!-- Industry projects -->
+      <section id="projects" class="reveal border-y border-slate-200/80 bg-white/50 py-24 dark:border-white/10 dark:bg-white/[0.02]">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+          <p class="eyebrow">03 · What I do</p>
+          <h2 class="mt-3 text-3xl font-bold">Where I add value</h2>
+          <p class="mt-3 max-w-2xl">The kinds of problems I like to solve. Happy to share specific examples and a full CV on request.</p>
+          <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {projects.map((p) => (
+              <article class="card card-hover flex flex-col p-6">
+                <h3 class="text-lg font-semibold">{p.title}</h3>
+                <p class="mt-2 flex-1 text-[15px] leading-relaxed">{p.blurb}</p>
+                <div class="mt-5 flex flex-wrap gap-1.5">{p.tags.map((t) => <span class="chip">{t}</span>)}</div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- GitHub -->
+      <section id="github" class="reveal mx-auto max-w-6xl px-4 py-24 sm:px-6">
+        <div class="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p class="eyebrow">04 · Open source</p>
+            <h2 class="mt-3 text-3xl font-bold">What I'm building on GitHub</h2>
+            <p class="mt-3 max-w-2xl">Pulled straight from GitHub, so it stays current on its own.</p>
+          </div>
+          <a href={`https://github.com/${profile.github}`} target="_blank" rel="noopener" class="btn btn-ghost"><Icon name="github" /> @{profile.github}</a>
+        </div>
+
+        {/* Hidden until there's enough public activity to make the heatmap worth showing */}
+        {github.calendar && github.calendar.total >= 25 && <div class="mt-10"><Contributions weeks={github.calendar.weeks} total={github.calendar.total} /></div>}
+
+        <div class="mt-8 grid gap-8 lg:grid-cols-[1fr_380px]">
+          <div class="grid gap-5 sm:grid-cols-2">
+            {repos.map((r) => (
+              <a href={r.url} target="_blank" rel="noopener" class="card card-hover group flex flex-col p-5">
+                <div class="flex items-center justify-between gap-2">
+                  <h3 class="truncate font-mono text-[15px] font-semibold">{r.name}</h3>
+                  <Icon name="external" class="size-4 shrink-0 text-slate-400 transition group-hover:text-teal-600" />
+                </div>
+                <p class="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed">{r.description ?? 'No description yet.'}</p>
+                <div class="mt-4 flex items-center gap-4 text-xs text-slate-500">
+                  {r.language && <span class="flex items-center gap-1.5"><span class="size-2.5 rounded-full" style={`background:${langColor[r.language] ?? '#94a3b8'}`}></span>{r.language}</span>}
+                  {r.stars > 0 && <span class="flex items-center gap-1"><Icon name="star" class="size-3.5" />{r.stars}</span>}
+                  <span>Updated {fmtDate(r.pushedAt)}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          <aside class="card p-5">
+            <h3 class="flex items-center justify-between text-sm font-semibold">
+              Recent activity <span class="font-mono text-[10px] font-normal text-slate-500 uppercase" id="gh-live">updated {fmtDate(github.fetchedAt)}</span>
+            </h3>
+            <ol id="gh-activity" class="mt-4 space-y-4 text-sm">
+              {events.length === 0 && <li class="text-slate-500">No public activity in the last 90 days.</li>}
+              {events.map((e) => (
+                <li class="border-l-2 border-teal-600/40 pl-3">
+                  <p>{e.verb} <a href={e.url} target="_blank" rel="noopener" class="font-medium text-slate-900 hover:text-teal-700 dark:text-white">{e.repo}</a></p>
+                  {e.detail && <p class="mt-0.5 line-clamp-1 text-xs text-slate-500">{e.detail}</p>}
+                  <time class="font-mono text-[11px] text-slate-400" datetime={e.at}>{fmtDate(e.at)}</time>
+                </li>
+              ))}
+            </ol>
+          </aside>
+        </div>
+      </section>
+
+      <!-- LinkedIn -->
+      <section id="updates" class="reveal border-y border-slate-200/80 bg-white/50 py-24 dark:border-white/10 dark:bg-white/[0.02]">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+          <div class="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p class="eyebrow">05 · Updates</p>
+              <h2 class="mt-3 text-3xl font-bold">Latest on LinkedIn</h2>
+            </div>
+            <a href={profile.linkedin} target="_blank" rel="noopener" class="btn btn-ghost"><Icon name="linkedin" class="size-4 text-[#0a66c2]" /> Follow on LinkedIn</a>
+          </div>
+          {
+            linkedinPosts.length ? (
+              <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {linkedinPosts.slice(0, 6).map((p) => <LinkedInPost {...p} />)}
+              </div>
+            ) : (
+              <div class="card mt-10 flex flex-col items-center gap-4 p-10 text-center">
+                <Icon name="linkedin" class="size-10 text-[#0a66c2]" />
+                <p class="max-w-md">Posts, write-ups and project updates are shared on LinkedIn first.</p>
+                <a href={profile.linkedin} target="_blank" rel="noopener" class="btn btn-primary">See my LinkedIn <Icon name="arrow" /></a>
+              </div>
+            )
+          }
+        </div>
+      </section>
+
+      <!-- Certifications + skills -->
+      <section id="certifications" class="reveal mx-auto grid max-w-6xl gap-12 px-4 py-24 sm:px-6 lg:grid-cols-2">
+        <div>
+          <p class="eyebrow">06 · Credentials</p>
+          <h2 class="mt-3 text-3xl font-bold">Certifications</h2>
+          <ul class="mt-8 space-y-3">
+            {certifications.map((c) => {
+              const inner = (
+                <>
+                  {c.image ? <img src={c.image} alt="" class="size-11 rounded-lg object-contain" loading="lazy" /> : <span class="grid size-11 shrink-0 place-items-center rounded-lg bg-teal-50 text-teal-700 dark:bg-teal-400/10 dark:text-teal-300"><Icon name="award" class="size-5" /></span>}
+                  <span class="min-w-0 flex-1">
+                    <span class="block font-semibold text-slate-900 dark:text-white">{c.name}</span>
+                    <span class="block text-sm text-slate-500">{c.issuer}{c.date && ` · ${/^\d{4}$/.test(c.date) ? c.date : fmtDate(c.date)}`}</span>
+                  </span>
+                  {c.url && <Icon name="external" class="size-4 text-slate-400" />}
+                </>
+              );
+              return <li>{c.url ? <a href={c.url} target="_blank" rel="noopener" class="card card-hover flex items-center gap-4 p-4">{inner}</a> : <div class="card flex items-center gap-4 p-4">{inner}</div>}</li>;
+            })}
+          </ul>
+        </div>
+        <div>
+          <p class="eyebrow">07 · Toolkit</p>
+          <h2 class="mt-3 text-3xl font-bold">Skills</h2>
+          <div class="mt-8 space-y-6">
+            {skills.map((s) => (
+              <div>
+                <h3 class="text-sm font-semibold">{s.group}</h3>
+                <div class="mt-2.5 flex flex-wrap gap-2">{s.items.map((i) => <span class="chip px-3 py-1 text-[13px]">{i}</span>)}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Education + awards -->
+      <section class="reveal mx-auto grid max-w-6xl gap-5 px-4 pb-24 sm:px-6 md:grid-cols-2">
+        {education.map((e) => (
+          <div class="card p-6">
+            <p class="eyebrow">Education</p>
+            <h3 class="mt-3 text-xl font-semibold">{e.school}</h3>
+            <p class="mt-1">{e.degree}</p>
+            <p class="mt-3 font-mono text-xs text-slate-500">{e.period} · {e.detail}</p>
+          </div>
+        ))}
+        <div class="card p-6">
+          <p class="eyebrow">Recognition</p>
+          <ul class="mt-3 space-y-2">
+            {awards.map((a) => <li class="flex gap-3"><Icon name="award" class="mt-1 size-4 shrink-0 text-teal-600" />{a}</li>)}
+          </ul>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="reveal px-4 pb-24 sm:px-6">
+        <div class="mx-auto max-w-6xl overflow-hidden rounded-3xl bg-ink px-6 py-16 text-center text-slate-300 sm:px-16 dark:bg-white/[0.04]">
+          <p class="eyebrow text-teal-400!">Let's talk</p>
+          <h2 class="mx-auto mt-4 max-w-2xl text-3xl font-bold text-white! sm:text-4xl">Interested in working together on data, automation or AI?</h2>
+          <p class="mx-auto mt-4 max-w-xl">Get in touch and I'll share my full CV and examples of my work.</p>
+          <div class="mt-8 flex flex-wrap justify-center gap-3">
+            <a href={`mailto:${profile.email}`} class="btn bg-white text-ink hover:bg-teal-300"><Icon name="mail" /> {profile.email}</a>
+            <a href={profile.linkedin} target="_blank" rel="noopener" class="btn border border-white/20 text-white hover:border-white"><Icon name="linkedin" /> Connect on LinkedIn</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-200/80 py-8 text-center text-sm text-slate-500 dark:border-white/10">
+      © {new Date().getFullYear()} {profile.name} · Built with Astro, refreshed daily from GitHub
+    </footer>
+
+    <script>
+      import { summarizeEvents } from '../lib/github-events.js';
+
+      // Theme toggle
+      document.getElementById('theme')?.addEventListener('click', () => {
+        const dark = document.documentElement.classList.toggle('dark');
+        try {
+          localStorage.setItem('theme', dark ? 'dark' : 'light');
+        } catch {}
+      });
+
+      // Header border once scrolled
+      const bar = document.getElementById('topbar');
+      const onScroll = () => bar?.classList.toggle('border-slate-200/80', scrollY > 8);
+      addEventListener('scroll', onScroll, { passive: true });
+
+      // Reveal-on-scroll
+      const io = new IntersectionObserver(
+        (entries) => entries.forEach((e) => e.isIntersecting && (e.target.classList.add('in'), io.unobserve(e.target))),
+        { rootMargin: '0px 0px -10% 0px' },
+      );
+      document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+      // Live refresh of GitHub activity between daily rebuilds
+      const user = 'Shreyamkmr';
+      const list = document.getElementById('gh-activity');
+      const esc = (s: string) => s.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
+      const ago = (d: string) => {
+        const s = (Date.now() - new Date(d).getTime()) / 1000;
+        const units: [number, Intl.RelativeTimeFormatUnit][] = [[60, 'second'], [60, 'minute'], [24, 'hour'], [30, 'day'], [12, 'month'], [Infinity, 'year']];
+        let v = s;
+        for (const [n, u] of units) {
+          if (Math.abs(v) < n) return new Intl.RelativeTimeFormat('en', { numeric: 'auto' }).format(-Math.round(v), u);
+          v /= n;
+        }
+        return '';
+      };
+      fetch(`https://api.github.com/users/${user}/events/public?per_page=50`)
+        .then((r) => (r.ok ? r.json() : Promise.reject()))
+        .then((raw) => {
+          const items = summarizeEvents(raw, user, 8);
+          if (!list || !items.length) return;
+          list.innerHTML = items
+            .map(
+              (e) => `<li class="border-l-2 border-teal-600/40 pl-3">
+                <p>${esc(e.verb)} <a href="${e.url}" target="_blank" rel="noopener" class="font-medium text-slate-900 hover:text-teal-700 dark:text-white">${esc(e.repo)}</a></p>
+                ${e.detail ? `<p class="mt-0.5 line-clamp-1 text-xs text-slate-500">${esc(e.detail)}</p>` : ''}
+                <time class="font-mono text-[11px] text-slate-400" datetime="${e.at}">${ago(e.at)}</time></li>`,
+            )
+            .join('');
+          const live = document.getElementById('gh-live');
+          if (live) live.textContent = 'live';
+        })
+        .catch(() => {});
+    </script>
+  </body>
+</html>

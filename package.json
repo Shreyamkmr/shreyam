@@ -1,0 +1,19 @@
+{
+  "name": "shreyam-site",
+  "type": "module",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "fetch": "node scripts/fetch-feeds.mjs",
+    "dev": "node scripts/fetch-feeds.mjs && astro dev",
+    "build": "node scripts/fetch-feeds.mjs && astro build",
+    "preview": "astro preview",
+    "add": "node scripts/add-entry.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.4.4",
+    "tailwindcss": "^4.3.3"
+  }
+}

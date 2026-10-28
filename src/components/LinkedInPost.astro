@@ -1,0 +1,44 @@
+---
+// Renders LinkedIn's official embed for a post. LinkedIn post URLs come in a few shapes:
+//   linkedin.com/posts/<slug>-activity-7123456789012345678-abcd
+//   linkedin.com/feed/update/urn:li:activity:7123456789012345678
+//   linkedin.com/feed/update/urn:li:share:7123... / urn:li:ugcPost:7123...
+import Icon from './Icon.astro';
+
+interface Props {
+  url: string;
+  summary?: string;
+  date?: string;
+}
+const { url, summary, date } = Astro.props;
+
+const m = url.match(/(activity|share|ugcPost)[:-](\d{15,25})/);
+const embed = m ? `https://www.linkedin.com/embed/feed/update/urn:li:${m[1]}:${m[2]}` : null;
+const when = date ? new Date(date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : '';
+---
+
+<article class="card overflow-hidden">
+  {
+    embed ? (
+      <iframe
+        src={embed}
+        title={summary || 'LinkedIn post'}
+        loading="lazy"
+        class="h-[520px] w-full bg-white"
+        frameborder="0"
+        allowfullscreen
+      />
+    ) : (
+      <p class="p-6 text-sm">{summary || 'View this post on LinkedIn.'}</p>
+    )
+  }
+  <a
+    href={url}
+    target="_blank"
+    rel="noopener"
+    class="flex items-center justify-between gap-3 border-t border-slate-200/80 px-5 py-3 text-sm font-medium text-slate-700 hover:text-teal-700 dark:border-white/10 dark:text-slate-300 dark:hover:text-teal-300"
+  >
+    <span class="flex items-center gap-2"><Icon name="linkedin" class="size-4 text-[#0a66c2]" /> {when || 'Open on LinkedIn'}</span>
+    <Icon name="external" />
+  </a>
+</article>

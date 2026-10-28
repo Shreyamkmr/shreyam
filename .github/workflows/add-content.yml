@@ -1,0 +1,61 @@
+# Add a LinkedIn post or certification to the site without touching code:
+# GitHub → Actions → "Add to website" → Run workflow (works from the GitHub mobile app too).
+name: Add to website
+
+on:
+  workflow_dispatch:
+    inputs:
+      kind:
+        description: What are you adding?
+        type: choice
+        options: [linkedin-post, certification]
+        required: true
+      url:
+        description: LinkedIn post URL, or the certificate's verification link
+        required: false
+      title:
+        description: Certification name, or a one-line summary of the post
+        required: false
+      issuer:
+        description: Certification issuer (e.g. Microsoft, Coursera)
+        required: false
+      date:
+        description: Date (YYYY-MM-DD). Leave blank for today.
+        required: false
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: Append entry
+        env:
+          KIND: ${{ inputs.kind }}
+          URL: ${{ inputs.url }}
+          TITLE: ${{ inputs.title }}
+          ISSUER: ${{ inputs.issuer }}
+          DATE: ${{ inputs.date }}
+        run: |
+          if [ "$KIND" = "linkedin-post" ]; then
+            node scripts/add-entry.mjs linkedin "$URL" "$TITLE"
+          else
+            node scripts/add-entry.mjs certification "$TITLE" "$ISSUER" "${DATE:-$(date +%F)}" "$URL"
+          fi
+      - name: Commit and redeploy
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data
+          git diff --cached --quiet && exit 0
+          git commit -m "Add ${{ inputs.kind }} to website"
+          git push
+          gh workflow run deploy.yml --ref master
