@@ -37,19 +37,26 @@ function describe(e, user) {
 }
 
 export function summarizeEvents(list, user, limit = 10) {
-  return list
-    .map((e) => {
-      const d = describe(e, user);
-      return (
-        d && {
-          verb: d.verb,
-          detail: d.detail ?? null,
-          repo: e.repo.name,
-          url: `https://github.com/${e.repo.name}`,
-          at: e.created_at,
-        }
-      );
-    })
-    .filter(Boolean)
-    .slice(0, limit);
+  const items = [];
+  for (const e of list) {
+    const d = describe(e, user);
+    if (!d) continue;
+    // Runs of pushes to one repo read better as a single line; the newest event comes first.
+    const prev = items.at(-1);
+    if (e.type === 'PushEvent' && prev?.type === 'PushEvent' && prev.repo === e.repo.name) {
+      prev.pushes += 1;
+      prev.verb = `Pushed ${prev.pushes} times to`;
+      continue;
+    }
+    items.push({
+      type: e.type,
+      pushes: 1,
+      verb: d.verb,
+      detail: d.detail ?? null,
+      repo: e.repo.name,
+      url: `https://github.com/${e.repo.name}`,
+      at: e.created_at,
+    });
+  }
+  return items.slice(0, limit);
 }

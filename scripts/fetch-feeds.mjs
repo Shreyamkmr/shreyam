@@ -35,7 +35,7 @@ async function soft(label, fn, fallback) {
 async function repos() {
   const all = await gh(`/users/${user}/repos?per_page=100&sort=pushed`);
   return all
-    .filter((r) => !r.fork && !r.private && !r.archived && !hiddenRepos.includes(r.name))
+    .filter((r) => !r.fork && !r.private && !r.archived && r.description && !hiddenRepos.includes(r.name))
     .map((r) => ({
       name: r.name,
       description: r.description,

@@ -33,7 +33,7 @@ const langColor: Record<string, string> = {
 const nav = [
   ['About', '#about'],
   ['Experience', '#experience'],
-  ['Projects', '#projects'],
+  ['What I do', '#projects'],
   ['GitHub', '#github'],
   ['Updates', '#updates'],
   ['Certifications', '#certifications'],
@@ -139,9 +139,9 @@ const jsonLd = {
       <section class="mx-auto max-w-6xl px-4 sm:px-6">
         <dl class="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-200/80 md:grid-cols-4 dark:border-white/10 dark:bg-white/10">
           {stats.map((s) => (
-            <div class="bg-paper p-6 dark:bg-ink">
-              <dt class="text-sm text-slate-500">{s.label}</dt>
-              <dd class="font-display mt-1 text-3xl font-bold text-slate-900 dark:text-white">{s.value}</dd>
+            <div class="bg-paper flex flex-col-reverse justify-end p-6 dark:bg-ink">
+              <dt class="mt-1 text-sm text-slate-500">{s.label}</dt>
+              <dd class="font-display text-3xl font-bold text-slate-900 dark:text-white">{s.value}</dd>
             </div>
           ))}
         </dl>
