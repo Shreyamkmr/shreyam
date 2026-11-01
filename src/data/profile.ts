@@ -10,7 +10,6 @@ export const profile = {
     'Engineer by training (B.Tech + M.Tech, IIT Kharagpur) and digital practitioner by trade. I work where operations meet software, helping teams adopt AI, automate repetitive processes and get real value from the data they already have.',
     'I enjoy building practical AI skills and agents, designing analytics that people actually use, and bringing colleagues along on the digital journey. Outside work I tinker with hardware, drones and open-source side projects.',
   ],
-  email: 'shreyamkmr@gmail.com',
   github: 'Shreyamkmr',
   linkedin: 'https://www.linkedin.com/in/shreyam-%E2%A0%80-bb066b17a/',
   // Optional: your Credly username (credly.com/users/<this>). Badges there are pulled in automatically.

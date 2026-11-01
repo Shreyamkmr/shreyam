@@ -45,7 +45,6 @@ const jsonLd = {
   '@type': 'Person',
   name: profile.name,
   jobTitle: profile.role,
-  email: `mailto:${profile.email}`,
   image: profile.avatar,
   url: new URL(base, Astro.site).href,
   sameAs: [`https://github.com/${profile.github}`, profile.linkedin],
@@ -334,7 +333,6 @@ const jsonLd = {
           <h2 class="mx-auto mt-4 max-w-2xl text-3xl font-bold text-white! sm:text-4xl">Interested in working together on data, automation or AI?</h2>
           <p class="mx-auto mt-4 max-w-xl">Get in touch and I'll share my full CV and examples of my work.</p>
           <div class="mt-8 flex flex-wrap justify-center gap-3">
-            <a href={`mailto:${profile.email}`} class="btn bg-white text-ink hover:bg-teal-300"><Icon name="mail" /> {profile.email}</a>
             <a href={profile.linkedin} target="_blank" rel="noopener" class="btn border border-white/20 text-white hover:border-white"><Icon name="linkedin" /> Connect on LinkedIn</a>
           </div>
         </div>
