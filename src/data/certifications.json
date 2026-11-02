@@ -1,14 +1,105 @@
 [
   {
-    "name": "Data Science Specialization (R)",
-    "issuer": "Johns Hopkins University · Coursera",
-    "date": "2020",
-    "url": ""
+    "name": "Microsoft DevOps Engineering AZ-400 Professional Certificate",
+    "issuer": "Microsoft",
+    "date": "2026-10",
+    "url": "https://www.coursera.org/account/accomplishments/specialization/WT9OWS0SW4KB",
+    "image": "certification-issuers/microsoft.jpg"
+  },
+  {
+    "name": "Launch Your DevOps Engineering Career",
+    "issuer": "Microsoft",
+    "date": "2026-10",
+    "url": "https://www.coursera.org/account/accomplishments/records/4NSJ3QY1Z85N",
+    "image": "certification-issuers/microsoft.jpg"
+  },
+  {
+    "name": "Observability & Metrics",
+    "issuer": "Microsoft",
+    "date": "2026-10",
+    "url": "https://www.coursera.org/account/accomplishments/records/B0VW2QPS4OL4",
+    "image": "certification-issuers/microsoft.jpg"
+  },
+  {
+    "name": "Cloud Native & IaC Management",
+    "issuer": "Microsoft",
+    "date": "2026-10",
+    "url": "https://www.coursera.org/account/accomplishments/records/P8G0UALYKRMM",
+    "image": "certification-issuers/microsoft.jpg"
+  },
+  {
+    "name": "Claude Academy: Claude Code in action",
+    "issuer": "Anthropic",
+    "date": "2026-10",
+    "url": "https://academy.claude.com/verify/6ccb3d5763798cf23eccb0906f6f853d",
+    "image": "certification-issuers/anthropic.jpg"
+  },
+  {
+    "name": "Microsoft Data Architecture for Modern Data Stacks",
+    "issuer": "Microsoft",
+    "date": "",
+    "url": "https://www.coursera.org/account/accomplishments/professional-cert/certificate/IS6OM6S91ZGM",
+    "image": "certification-issuers/microsoft.jpg"
+  },
+  {
+    "name": "Advanced Analytics & AI Optimization with Microsoft Fabric",
+    "issuer": "Microsoft",
+    "date": "2026-10",
+    "url": "https://www.coursera.org/account/accomplishments/records/7YSLVIXFKPEP",
+    "image": "certification-issuers/microsoft.jpg"
+  },
+  {
+    "name": "Microsoft Fabric: Data Governance, Security, and Analytics",
+    "issuer": "Microsoft",
+    "date": "2026-10",
+    "url": "https://www.coursera.org/account/accomplishments/records/OYK6GHNKOSYT",
+    "image": "certification-issuers/microsoft.jpg"
+  },
+  {
+    "name": "Pipeline Engineering & Automation",
+    "issuer": "Microsoft",
+    "date": "2026-08",
+    "url": "https://www.coursera.org/account/accomplishments/records/5Y6IPSQ9BWAR",
+    "image": "certification-issuers/microsoft.jpg"
   },
   {
     "name": "Machine Learning",
-    "issuer": "Stanford University · Coursera",
-    "date": "",
+    "issuer": "Stanford Online",
+    "date": "2019-05",
+    "url": "https://www.coursera.org/account/accomplishments/records/J6W682QHANVQ"
+  },
+  {
+    "name": "Modern Data Architecture Fundamentals with Microsoft Fabric",
+    "issuer": "Microsoft",
+    "date": "2026-05",
+    "url": "https://www.coursera.org/account/accomplishments/records/X678AFOGEEFM",
+    "image": "certification-issuers/microsoft.jpg"
+  },
+  {
+    "name": "Building Data Lakes and Lakehouses with Microsoft Fabric",
+    "issuer": "Microsoft",
+    "date": "2026-05",
+    "url": "https://www.coursera.org/account/accomplishments/records/RXQSBYFIYBUX",
+    "image": "certification-issuers/microsoft.jpg"
+  },
+  {
+    "name": "DevOps Platforms & Source Control",
+    "issuer": "Microsoft",
+    "date": "2026-08",
+    "url": "https://www.coursera.org/account/accomplishments/records/57C4YVR21EP8",
+    "image": "certification-issuers/microsoft.jpg"
+  },
+  {
+    "name": "Data Warehousing & Pipeline Development in Microsoft Fabric",
+    "issuer": "Microsoft",
+    "date": "2026-08",
+    "url": "https://www.coursera.org/account/accomplishments/records/5QXB4ZJDFP44",
+    "image": "certification-issuers/microsoft.jpg"
+  },
+  {
+    "name": "Data Science Specialization (R)",
+    "issuer": "Johns Hopkins University · Coursera",
+    "date": "2020",
     "url": ""
   },
   {

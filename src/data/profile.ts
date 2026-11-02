@@ -111,6 +111,21 @@ export const skills = [
     items: ['Power BI', 'Tableau', 'Machine learning', 'Deep learning (Keras)', 'Forecasting', 'Optimization', 'LLM agents & MCP'],
   },
   { group: 'Automation & tools', items: ['Power Platform', 'Power Automate', 'RPA', 'SharePoint', 'Git', 'GitHub'] },
+  {
+    group: 'LinkedIn skills',
+    items: [
+      'Laboratory Robotics',
+      'Photogrammetry',
+      'Pixhawk',
+      'ArduPilot',
+      'Business Process Improvement',
+      'Project Management',
+      'Business Analytics',
+      'Refinery Operations Optimisation',
+      'Data Science',
+      'Computer Vision',
+    ],
+  },
 ];
 
 export const education = [

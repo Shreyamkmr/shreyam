@@ -13,7 +13,8 @@ Built with [Astro](https://astro.build) and Tailwind CSS, hosted on GitHub Pages
 | Contribution heatmap | GitHub GraphQL | Daily. Shown once the last year has 25+ public contributions. To count private work, turn on **Settings → Profile → "Include private contributions on my profile"**. |
 | Credly badges | Credly public API | Daily, once `credly` is set in `src/data/profile.ts`. |
 | LinkedIn posts | `src/data/linkedin.json` | One click, see below. |
-| Certifications | `src/data/certifications.json` + Credly | One click, see below. |
+| Certifications | `src/data/certifications.json` + Credly | Credly badges are fetched daily; other credentials and issuer images are maintained in the site data. |
+| Skills | `src/data/profile.ts` | Maintained in the profile data; LinkedIn skills are copied manually rather than synced automatically. |
 
 ### Adding a LinkedIn post or certification
 
