@@ -12,6 +12,7 @@ import credly from '../data/generated/credly.json';
 const base = import.meta.env.BASE_URL;
 const title = `${profile.name} · ${profile.role}`;
 const description = profile.tagline;
+const avatar = new URL(`${base}${profile.avatar}`, Astro.site).href;
 
 const certifications = [...credly, ...manualCerts].sort((a, b) => String(b.date).localeCompare(String(a.date)));
 const repos = github.repos.slice(0, 6);
@@ -45,7 +46,7 @@ const jsonLd = {
   '@type': 'Person',
   name: profile.name,
   jobTitle: profile.role,
-  image: profile.avatar,
+  image: avatar,
   url: new URL(base, Astro.site).href,
   sameAs: [`https://github.com/${profile.github}`, profile.linkedin],
   alumniOf: 'Indian Institute of Technology Kharagpur',
@@ -65,7 +66,7 @@ const jsonLd = {
     <meta property="og:type" content="profile" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={profile.avatar} />
+    <meta property="og:image" content={avatar} />
     <meta name="twitter:card" content="summary" />
     <meta name="theme-color" content="#0b1220" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -130,7 +131,7 @@ const jsonLd = {
         </div>
         <div class="relative mx-auto md:mx-0">
           <div class="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-teal-500/30 to-sky-500/30 blur-2xl"></div>
-          <img src={profile.avatar} alt={profile.name} width="288" height="288" class="relative size-56 rounded-[2rem] border border-white/60 object-cover shadow-xl sm:size-72 dark:border-white/10" />
+          <img src={`${base}${profile.avatar}`} alt={profile.name} width="288" height="288" class="relative size-56 rounded-[2rem] border border-white/60 object-cover shadow-xl sm:size-72 dark:border-white/10" />
         </div>
       </section>
 

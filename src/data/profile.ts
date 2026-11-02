@@ -14,7 +14,7 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/shreyam-%E2%A0%80-bb066b17a/',
   // Optional: your Credly username (credly.com/users/<this>). Badges there are pulled in automatically.
   credly: '',
-  avatar: 'https://avatars.githubusercontent.com/u/37586438?v=4',
+  avatar: 'profile.png',
 };
 
 export const stats = [
