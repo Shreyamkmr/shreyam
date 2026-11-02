@@ -97,10 +97,46 @@
     "image": "certification-issuers/microsoft.jpg"
   },
   {
-    "name": "Data Science Specialization (R)",
-    "issuer": "Johns Hopkins University · Coursera",
-    "date": "2020",
-    "url": ""
+    "name": "Data Science: Foundations using R Specialization",
+    "issuer": "The Johns Hopkins University",
+    "date": "2020-05",
+    "url": "https://www.coursera.org/account/accomplishments/specialization/C28T4VWGEQ3S",
+    "image": "certification-issuers/johns-hopkins.jpg"
+  },
+  {
+    "name": "Reproducible Research",
+    "issuer": "The Johns Hopkins University",
+    "date": "2020-05",
+    "url": "https://www.coursera.org/account/accomplishments/records/GCJZLVJVWZJJ",
+    "image": "certification-issuers/johns-hopkins.jpg"
+  },
+  {
+    "name": "Exploratory Data Analysis",
+    "issuer": "The Johns Hopkins University",
+    "date": "2020-05",
+    "url": "https://www.coursera.org/account/accomplishments/records/WN3ABT9JPVKP",
+    "image": "certification-issuers/johns-hopkins.jpg"
+  },
+  {
+    "name": "Getting and Cleaning Data",
+    "issuer": "The Johns Hopkins University",
+    "date": "2020-05",
+    "url": "https://www.coursera.org/account/accomplishments/records/RFUXZVM5D5DD",
+    "image": "certification-issuers/johns-hopkins.jpg"
+  },
+  {
+    "name": "R Programming",
+    "issuer": "The Johns Hopkins University",
+    "date": "2020-04",
+    "url": "https://www.coursera.org/account/accomplishments/records/4UMXL7UDCMH2",
+    "image": "certification-issuers/johns-hopkins.jpg"
+  },
+  {
+    "name": "The Data Scientist’s Toolbox",
+    "issuer": "The Johns Hopkins University",
+    "date": "2020-04",
+    "url": "https://www.coursera.org/account/accomplishments/records/GF2L4BPBRB5Y",
+    "image": "certification-issuers/johns-hopkins.jpg"
   },
   {
     "name": "SQL Queries",
