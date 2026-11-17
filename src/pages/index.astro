@@ -46,18 +46,105 @@ const nav = [
   ['GitHub', '#github'],
   ['Updates', '#updates'],
   ['Certifications', '#certifications'],
+  ['FAQ', '#faq'],
   ['Contact', '#contact'],
+];
+
+const faqs = [
+  {
+    question: 'Who is Shreyam?',
+    answer:
+      'Shreyam is a Digital Analyst based in Cheshire, England, working in industrial data and AI. Shreyam is an engineer by training, with a B.Tech + M.Tech dual degree from IIT Kharagpur, and helps industrial teams adopt AI, automate repetitive processes and get value from the operational data they already have.',
+  },
+  {
+    question: 'What does Shreyam do?',
+    answer:
+      'Shreyam builds AI tools and assistants, automates manual workflows, and turns historical and real-time plant data into analytics and decision-support tools. Current work includes PI AF-based analytics, AI-powered assistants, and scalable digital solutions across energy, oil and gas, and hydrogen operations.',
+  },
+  {
+    question: 'Where has Shreyam worked?',
+    answer:
+      'Shreyam has been Digital Analyst, Digitalization at EET Fuels (formerly Essar Oil UK) in Cheshire, UK, since October 2023. Previously, Shreyam was Associate Manager, Digitalization at Vedanta Ltd. in India (August 2022 to October 2023), working across aluminium and power operations.',
+  },
+  {
+    question: "What is Shreyam's background and education?",
+    answer:
+      'Shreyam holds a B.Tech + M.Tech dual degree in Metallurgical & Materials Engineering from the Indian Institute of Technology Kharagpur (2017–2022, CGPA 7.92 / 10), and has 4+ years in industrial digital and AI across energy, metals and power, including as part of the Aerial Robotics Lab team that won IMAV 2019.',
+  },
+  {
+    question: 'What tools and technologies does Shreyam use?',
+    answer:
+      'Shreyam works with Python, R, SQL, Power BI, Microsoft Fabric, AVEVA / OSIsoft PI (PI AF and PI Vision), SAP PM, MES, IoT and digital twins, plus Power Automate, RPA, LLM agents and MCP, and DevOps practices including CI/CD and infrastructure as code.',
+  },
+  {
+    question: 'How can I contact Shreyam?',
+    answer:
+      'The best way to get in touch is via LinkedIn, linked from this site. Shreyam is happy to share a full CV and specific examples of work on request.',
+  },
 ];
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: profile.name,
+  description: profile.tagline,
   jobTitle: profile.role,
   image: avatar,
   url: new URL(basePath, Astro.site).href,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Cheshire',
+    addressRegion: 'England',
+    addressCountry: 'GB',
+  },
+  worksFor: {
+    '@type': 'Organization',
+    name: 'EET Fuels (formerly Essar Oil UK)',
+  },
   sameAs: [`https://github.com/${profile.github}`, profile.linkedin],
-  alumniOf: 'Indian Institute of Technology Kharagpur',
+  alumniOf: {
+    '@type': 'CollegeOrUniversity',
+    name: 'Indian Institute of Technology Kharagpur',
+  },
+  knowsAbout: [
+    'Industrial data',
+    'AVEVA OSIsoft PI',
+    'PI AF',
+    'PI Vision',
+    'AI agents',
+    'MCP',
+    'Power BI',
+    'Microsoft Fabric',
+    'Workflow automation',
+    'Machine learning',
+    'Digital twins',
+    'IoT',
+    'Data engineering',
+    'DevOps',
+  ],
+  hasCredential: certifications.map((c) => ({
+    '@type': 'EducationalOccupationalCredential',
+    name: c.name,
+    recognizedBy: {
+      '@type': 'Organization',
+      name: c.issuer,
+    },
+    ...(c.url ? { url: c.url } : {}),
+  })),
+  award: awards,
+};
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: f.answer,
+    },
+  })),
 };
 ---
 
@@ -84,6 +171,7 @@ const jsonLd = {
       rel="stylesheet"
     />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
     <script is:inline>
       try {
         const t = localStorage.getItem('theme');
@@ -339,6 +427,20 @@ const jsonLd = {
           <ul class="mt-3 space-y-2">
             {awards.map((a) => <li class="flex gap-3"><Icon name="award" class="mt-1 size-4 shrink-0 text-teal-600" />{a}</li>)}
           </ul>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="reveal mx-auto max-w-6xl px-4 pb-24 sm:px-6">
+        <p class="eyebrow">FAQ</p>
+        <h2 class="mt-3 text-3xl font-bold">Frequently asked questions</h2>
+        <div class="mt-8 grid gap-5 md:grid-cols-2">
+          {faqs.map((f) => (
+            <div class="card p-6">
+              <h3 class="text-lg font-semibold">{f.question}</h3>
+              <p class="mt-2 text-[15px] leading-relaxed">{f.answer}</p>
+            </div>
+          ))}
         </div>
       </section>
 

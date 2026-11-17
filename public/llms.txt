@@ -1,0 +1,35 @@
+# Shreyam — Digital Analyst, Industrial Data & AI
+
+> Shreyam is a Digital Analyst based in Cheshire, England, working in industrial data and AI. Shreyam helps industrial teams work smarter with data and AI: building AI tools, automating workflows and turning operational data into better decisions. Shreyam is currently Digital Analyst, Digitalization at EET Fuels (formerly Essar Oil UK), and holds a B.Tech + M.Tech dual degree from the Indian Institute of Technology Kharagpur.
+
+## About
+
+- [Personal website](https://shreyamkmr.github.io/shreyam/): Shreyam's portfolio — experience, capability areas, open-source work, certifications, skills, education and awards. Content is kept deliberately general; specific examples and a full CV are shared on request.
+- [GitHub profile](https://github.com/Shreyamkmr): Open-source projects, including AI agents and MCP servers, Android car telemetry, and data projects. The website's GitHub section is refreshed from GitHub daily.
+- [LinkedIn profile](https://www.linkedin.com/in/shreyam-%E2%A0%80-bb066b17a/): Professional profile and posts. The best way to get in touch is via LinkedIn.
+
+## Expertise
+
+- AI skills and agents: AI assistants, skills and agents connected to the tools and data teams already use (LLMs, Claude, MCP, prompt design).
+- Workflow automation: replacing repetitive manual steps with reliable automated flows (Power Automate, RPA, Python).
+- Analytics and dashboards: operational data turned into dashboards and reports people actually use (Power BI, SQL, DAX).
+- Industrial data: process, sensor and business data brought together for monitoring and action (time-series data, IoT, data integration, AVEVA / OSIsoft PI, PI AF, PI Vision, SAP PM, MES, digital twins).
+- Machine learning: forecasting, prediction and optimisation models for engineering and business questions (Python, R).
+- Digital adoption: finding the right problems, proving value quickly, and helping teams embrace new ways of working.
+
+## Experience
+
+- Digital Analyst, Digitalization, EET Fuels (formerly Essar Oil UK), Cheshire, UK — October 2023 to present. Digital and AI initiatives, PI AF-based analytics, analytics and decision-support tools, AI-powered tools and assistants, and workflow automation across energy, oil and gas, and hydrogen operations.
+- Associate Manager, Digitalization, Vedanta Ltd., India — August 2022 to October 2023. Data analytics, machine learning and automation across aluminium and power operations.
+- R&D Intern, ArcelorMittal Nippon Steel, India — December 2019 to January 2020. Machine learning applied to materials research.
+- Head, Hardware & Embedded Team, Aerial Robotics Lab, IIT Kharagpur — May 2018 to June 2022. Autonomous drones, including a delivery UAV for medical supplies; the team won IMAV 2019.
+
+## Education and recognition
+
+- B.Tech + M.Tech Dual Degree, Metallurgical & Materials Engineering, Indian Institute of Technology Kharagpur, 2017–2022, CGPA 7.92 / 10.
+- SPOT Award, Essar UK Services Ltd.; Sector CEO Award, Vedanta Aluminium & Power; Winner, IMAV 2019; NDA-II AFSB qualified.
+- 21 certifications are listed on the website, including Microsoft DevOps, Microsoft Fabric, data architecture, machine learning and R specialisations. See the full list in the detailed file below.
+
+## Optional
+
+- [Full details](https://shreyamkmr.github.io/shreyam/llms-full.txt): Complete profile, experience, skills, education, awards and all certifications with verification links, in plain text for AI systems.

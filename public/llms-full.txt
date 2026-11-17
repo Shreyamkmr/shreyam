@@ -1,0 +1,151 @@
+# Shreyam — Digital Analyst, Industrial Data & AI: full profile for AI systems
+
+This file is the detailed companion to `llms.txt` for Shreyam's personal website at https://shreyamkmr.github.io/shreyam/. Everything below is taken from the published site. The site's GitHub section refreshes daily; the profile content below was last updated on the site on 2 November 2026. No email address is published; the way to get in touch is via LinkedIn.
+
+## Who Shreyam is
+
+Shreyam is a Digital Analyst based in Cheshire, England, working in industrial data and AI.
+
+> I help industrial teams work smarter with data and AI: building AI tools, automating workflows and turning operational data into better decisions.
+
+> Engineer by training (B.Tech + M.Tech, IIT Kharagpur) and digital practitioner by trade. I work where operations meet software, helping teams adopt AI, automate repetitive processes and get real value from the data they already have.
+
+> I enjoy building practical AI skills and agents, designing analytics that people actually use, and bringing colleagues along on the digital journey. Outside work I tinker with hardware, drones and open-source side projects.
+
+Key facts:
+
+- Role: Digital Analyst, Digitalization, at EET Fuels (formerly Essar Oil UK).
+- Location: Cheshire, England, UK.
+- Experience: 4+ years in industrial digital and AI.
+- Sectors: energy, metals and power (3 sectors).
+- Education: B.Tech + M.Tech dual degree, Indian Institute of Technology Kharagpur (IIT KGP).
+- Recognition: international drone competition winner, IMAV 2019.
+- GitHub: https://github.com/Shreyamkmr
+- LinkedIn: https://www.linkedin.com/in/shreyam-%E2%A0%80-bb066b17a/
+- Website: https://shreyamkmr.github.io/shreyam/
+
+Content on the site is kept deliberately general because the page is public. Specific examples and a full CV are shared on request.
+
+## What Shreyam does
+
+### AI skills & agents
+
+Building AI assistants, skills and agents that take on real work, connected to the tools and data teams already use. Tags: LLMs, Claude, MCP, Prompt design.
+
+### Workflow automation
+
+Replacing repetitive manual steps with reliable automated flows, so people spend time on judgement rather than copy-paste. Tags: Power Automate, RPA, Python.
+
+### Analytics & dashboards
+
+Turning raw operational data into clear, trusted dashboards and reports that people actually use. Tags: Power BI, SQL, DAX.
+
+### Industrial data
+
+Bringing together process, sensor and business data so it can be monitored, analysed and acted on. Tags: Time-series, IoT, Data integration.
+
+### Machine learning
+
+Forecasting, prediction and optimisation models applied to practical engineering and business questions. Tags: Python, R, Forecasting, Optimisation.
+
+### Digital adoption
+
+Working with stakeholders to find the right problems, prove value quickly and help teams embrace new ways of working. Tags: Stakeholders, Change, Training.
+
+## Experience
+
+### Digital Analyst, Digitalization — EET Fuels (formerly Essar Oil UK), Cheshire, UK — Oct 2023 – Present
+
+- Lead digital and AI initiatives across business functions, translating operational challenges into practical solutions and supporting adoption.
+- Use historical and real-time plant data, including PI AF-based analytics, to improve operational visibility and support performance monitoring.
+- Develop analytics and decision-support tools that help teams identify inefficiencies and make better-informed operational decisions.
+- Build AI-powered tools and assistants, and automate manual workflows to make processes more efficient.
+- Work with business and engineering stakeholders to shape scalable solutions across energy, oil and gas, and hydrogen operations.
+
+### Associate Manager, Digitalization — Vedanta Ltd., India — Aug 2022 – Oct 2023
+
+- Delivered data analytics, machine learning and automation projects across aluminium and power operations.
+- Advised on emerging technologies and worked with stakeholders to shape data-driven decisions.
+
+### R&D Intern — ArcelorMittal Nippon Steel, India — Dec 2019 – Jan 2020
+
+- Applied machine learning to materials research problems.
+
+### Head, Hardware & Embedded Team — Aerial Robotics Lab, IIT Kharagpur, Kharagpur, India — May 2018 – Jun 2022
+
+- Led the hardware and embedded team building autonomous drones, including a delivery UAV for medical supplies.
+- Team won IMAV 2019, the International Micro Air Vehicle competition.
+
+## Skills
+
+- Languages: Python, R, SQL, C++, DAX, Power Query (M), Kotlin.
+- Industrial data: AVEVA / OSIsoft PI, PI AF, PI Vision, Real-time plant data, SAP PM, MES, IoT, Digital twins.
+- Analytics & AI: Power BI, Microsoft Fabric, Tableau, Machine learning, Deep learning (Keras), Forecasting, Optimization, Advanced analytics, Data governance, Data security, LLM agents & MCP, Claude Code.
+- Data engineering & DevOps: Data architecture, Data warehousing, Data pipelines, Data lakes & lakehouses, DevOps, CI/CD, Source control, Observability & metrics, Cloud-native technologies, Infrastructure as code.
+- Automation & tools: Power Platform, Power Automate, RPA, SharePoint, Git, GitHub.
+- LinkedIn skills: Laboratory Robotics, Photogrammetry, Pixhawk, ArduPilot, Business Process Improvement, Project Management, Business Analytics, Refinery Operations Optimisation, Data Science, Computer Vision.
+
+## Education
+
+- Indian Institute of Technology Kharagpur — B.Tech + M.Tech Dual Degree, Metallurgical & Materials Engineering — 2017 – 2022 · CGPA 7.92 / 10.
+
+## Recognition
+
+- SPOT Award, Essar UK Services Ltd.
+- Sector CEO Award, Vedanta Aluminium & Power.
+- Winner, IMAV 2019 (International Micro Air Vehicle competition).
+- NDA-II AFSB qualified.
+
+## Certifications
+
+All certifications listed on the website, newest first, with verification links where the site provides them:
+
+1. Microsoft DevOps Engineering AZ-400 Professional Certificate — Microsoft — Oct 2026 — https://www.coursera.org/account/accomplishments/specialization/WT9OWS0SW4KB
+2. Launch Your DevOps Engineering Career — Microsoft — Oct 2026 — https://www.coursera.org/account/accomplishments/records/4NSJ3QY1Z85N
+3. Observability & Metrics — Microsoft — Oct 2026 — https://www.coursera.org/account/accomplishments/records/B0VW2QPS4OL4
+4. Cloud Native & IaC Management — Microsoft — Oct 2026 — https://www.coursera.org/account/accomplishments/records/P8G0UALYKRMM
+5. Claude Academy: Claude Code in action — Anthropic — Oct 2026 — https://academy.claude.com/verify/6ccb3d5763798cf23eccb0906f6f853d
+6. Advanced Analytics & AI Optimization with Microsoft Fabric — Microsoft — Oct 2026 — https://www.coursera.org/account/accomplishments/records/7YSLVIXFKPEP
+7. Microsoft Fabric: Data Governance, Security, and Analytics — Microsoft — Oct 2026 — https://www.coursera.org/account/accomplishments/records/OYK6GHNKOSYT
+8. Pipeline Engineering & Automation — Microsoft — Aug 2026 — https://www.coursera.org/account/accomplishments/records/5Y6IPSQ9BWAR
+9. DevOps Platforms & Source Control — Microsoft — Aug 2026 — https://www.coursera.org/account/accomplishments/records/57C4YVR21EP8
+10. Data Warehousing & Pipeline Development in Microsoft Fabric — Microsoft — Aug 2026 — https://www.coursera.org/account/accomplishments/records/5QXB4ZJDFP44
+11. Modern Data Architecture Fundamentals with Microsoft Fabric — Microsoft — May 2026 — https://www.coursera.org/account/accomplishments/records/X678AFOGEEFM
+12. Building Data Lakes and Lakehouses with Microsoft Fabric — Microsoft — May 2026 — https://www.coursera.org/account/accomplishments/records/RXQSBYFIYBUX
+13. Data Science: Foundations using R Specialization — The Johns Hopkins University — May 2020 — https://www.coursera.org/account/accomplishments/specialization/C28T4VWGEQ3S
+14. Reproducible Research — The Johns Hopkins University — May 2020 — https://www.coursera.org/account/accomplishments/records/GCJZLVJVWZJJ
+15. Exploratory Data Analysis — The Johns Hopkins University — May 2020 — https://www.coursera.org/account/accomplishments/records/WN3ABT9JPVKP
+16. Getting and Cleaning Data — The Johns Hopkins University — May 2020 — https://www.coursera.org/account/accomplishments/records/RFUXZVM5D5DD
+17. R Programming — The Johns Hopkins University — Apr 2020 — https://www.coursera.org/account/accomplishments/records/4UMXL7UDCMH2
+18. The Data Scientist's Toolbox — The Johns Hopkins University — Apr 2020 — https://www.coursera.org/account/accomplishments/records/GF2L4BPBRB5Y
+19. Machine Learning — Stanford Online — May 2019 — https://www.coursera.org/account/accomplishments/records/J6W682QHANVQ
+20. Microsoft Data Architecture for Modern Data Stacks — Microsoft — date not listed on the site — https://www.coursera.org/account/accomplishments/professional-cert/certificate/IS6OM6S91ZGM
+21. SQL Queries — DataCamp — date and verification link not listed on the site.
+
+## Open source
+
+Shreyam's GitHub profile is https://github.com/Shreyamkmr. The website's GitHub section is pulled from GitHub and rebuilt daily, so the featured repositories and recent activity stay current on their own. Public projects include:
+
+- AgenticCar (https://github.com/Shreyamkmr/AgenticCar): Android OBD-II logger that records every ECU signal via ELM327 and serves trips to Claude through an on-phone MCP server (Wi-Fi or Cloudflare Tunnel).
+- trading212-mcp-cloudrun (https://github.com/Shreyamkmr/trading212-mcp-cloudrun): Host the Trading 212 MCP server on Google Cloud Run in one command.
+- google-health-mcp-remote (https://github.com/Shreyamkmr/google-health-mcp-remote): Remote Google Health (Fitbit/Pixel Watch) MCP server with built-in OAuth 2.0, ready for Google Cloud Run's free tier.
+
+## Frequently asked questions
+
+Who is Shreyam? Shreyam is a Digital Analyst based in Cheshire, England, working in industrial data and AI. Shreyam is an engineer by training, with a B.Tech + M.Tech dual degree from IIT Kharagpur, and helps industrial teams adopt AI, automate repetitive processes and get value from the operational data they already have.
+
+What does Shreyam do? Shreyam builds AI tools and assistants, automates manual workflows, and turns historical and real-time plant data into analytics and decision-support tools. Current work includes PI AF-based analytics, AI-powered assistants, and scalable digital solutions across energy, oil and gas, and hydrogen operations.
+
+Where has Shreyam worked? Shreyam has been Digital Analyst, Digitalization at EET Fuels (formerly Essar Oil UK) in Cheshire, UK, since October 2023. Previously, Shreyam was Associate Manager, Digitalization at Vedanta Ltd. in India (August 2022 to October 2023), working across aluminium and power operations.
+
+What is Shreyam's background and education? Shreyam holds a B.Tech + M.Tech dual degree in Metallurgical & Materials Engineering from the Indian Institute of Technology Kharagpur (2017–2022, CGPA 7.92 / 10), and has 4+ years in industrial digital and AI across energy, metals and power, including as part of the Aerial Robotics Lab team that won IMAV 2019.
+
+What tools and technologies does Shreyam use? Shreyam works with Python, R, SQL, Power BI, Microsoft Fabric, AVEVA / OSIsoft PI (PI AF and PI Vision), SAP PM, MES, IoT and digital twins, plus Power Automate, RPA, LLM agents and MCP, and DevOps practices including CI/CD and infrastructure as code.
+
+How can I contact Shreyam? The best way to get in touch is via LinkedIn, linked from the website. Shreyam is happy to share a full CV and specific examples of work on request.
+
+## Contact
+
+- LinkedIn: https://www.linkedin.com/in/shreyam-%E2%A0%80-bb066b17a/ (also linked from every page of the website).
+- GitHub: https://github.com/Shreyamkmr
+- No email address is published on the website.
